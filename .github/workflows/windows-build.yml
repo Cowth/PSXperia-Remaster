@@ -21,3 +21,5 @@ jobs:
           java-version: '21'
       - name: Build solution
         run: dotnet build .\PSXperia.Remastered.sln -c Release -p:Platform=x64
+      - name: Run Engine tests
+        run: dotnet test .\tests\PSXperia.Engine.Tests\PSXperia.Engine.Tests.csproj -c Release --no-build --logger "console;verbosity=normal"

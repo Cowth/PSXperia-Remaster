@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.Library", "src\PSX
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.Device", "src\PSXperia.Device\PSXperia.Device.csproj", "{44444444-4444-4444-8444-444444444444}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.Engine.Tests", "tests\PSXperia.Engine.Tests\PSXperia.Engine.Tests.csproj", "{55555555-5555-4555-8555-555555555555}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,14 @@ Global
 		{44444444-4444-4444-8444-444444444444}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44444444-4444-4444-8444-444444444444}.Release|x64.ActiveCfg = Release|Any CPU
 		{44444444-4444-4444-8444-444444444444}.Release|x64.Build.0 = Release|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Debug|x64.Build.0 = Debug|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Release|x64.ActiveCfg = Release|Any CPU
+		{55555555-5555-4555-8555-555555555555}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
