@@ -1,0 +1,35 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET build output
+**/bin/
+**/obj/
+artifacts/
+publish/
+
+# Local secrets and signing material
+*.pfx
+*.p12
+*.snk
+*.keystore
+*.jks
+.env
+.env.*
+
+# Local runtime/game content (never commit)
+**/*.zpak
+**/*.iso
+**/*.bin
+**/*.cue
+**/*.img
+**/*.pbp
+**/runtime/
+**/PSXperia_Runtime/
+
+# OS/editor files
+.DS_Store
+Thumbs.db

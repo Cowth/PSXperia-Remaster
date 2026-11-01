@@ -1,0 +1,7 @@
+PROJECT LICENSE STATUS
+
+The license for PSXperia Remastered's own source code has not yet been selected by the project owner.
+
+Do not assume that the application source is open source or that it may be redistributed, modified, or relicensed. A project-wide LICENSE file should be added only after the owner chooses the intended license.
+
+Third-party components retain their own licenses. In particular, see tools/LICENSE-PSXperiaTool.txt for the bundled PSXperiaTool component.

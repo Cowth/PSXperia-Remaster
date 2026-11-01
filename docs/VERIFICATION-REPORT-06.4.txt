@@ -1,0 +1,18 @@
+PSXperia Remastered Milestone 06.4 — Verification Report
+
+Verified in this build environment:
+1. ApkBuilder.java compiled successfully with OpenJDK 21 against the original PSXperiaTool.jar dependencies.
+2. The updated ApkBuilder.class was inserted into the bundled JAR.
+3. `javap` inspection confirms ApkBuilder no longer references SignedJarBuilder, sun.misc.BASE64Encoder, signApk, or the old bundled signing keystore.
+4. The patched PSXperia command-line entry point starts under OpenJDK 21 and prints its expected usage information.
+5. The updated PSXperiaTool.jar passes `unzip -t` with no archive errors.
+6. A separate JDK 21 smoke test generated a PKCS#12 RSA-2048 signing key, signed an APK-shaped ZIP using SHA256withRSA/SHA-256, and passed `jarsigner -verify`.
+7. The signing stage is configured for JAR/V1 signature only; it does not add V2/V3 signing blocks.
+8. The C# orchestration now expects the original packager's `.apk.unsigned` output, signs it, verifies it, and only then validates and publishes the APK + Android data directory.
+
+Not verified in this environment:
+- The WPF/.NET 10 solution was not compiled here because the .NET SDK is unavailable in this environment.
+- A full conversion using the user's complete runtime ZPAKs and a PS1 disc image was not run here.
+- Installation and launch on the Xperia Play have not been tested.
+
+Do not treat this milestone as device-tested until the user builds it in Visual Studio, completes a real conversion, and tests installation on the phone.
