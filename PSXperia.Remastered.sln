@@ -12,6 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.Device", "src\PSXp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.Engine.Tests", "tests\PSXperia.Engine.Tests\PSXperia.Engine.Tests.csproj", "{55555555-5555-4555-8555-555555555555}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.RuntimeArchiveMeasure", "tools\PSXperia.RuntimeArchiveMeasure\PSXperia.RuntimeArchiveMeasure.csproj", "{66666666-6666-4666-8666-666666666666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.RuntimeArchiveMeasure.Tests", "tests\PSXperia.RuntimeArchiveMeasure.Tests\PSXperia.RuntimeArchiveMeasure.Tests.csproj", "{77777777-7777-4777-8777-777777777777}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXperia.App.Tests", "tests\PSXperia.App.Tests\PSXperia.App.Tests.csproj", "{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +66,30 @@ Global
 		{55555555-5555-4555-8555-555555555555}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55555555-5555-4555-8555-555555555555}.Release|x64.ActiveCfg = Release|Any CPU
 		{55555555-5555-4555-8555-555555555555}.Release|x64.Build.0 = Release|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Debug|x64.Build.0 = Debug|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Release|x64.ActiveCfg = Release|Any CPU
+		{66666666-6666-4666-8666-666666666666}.Release|x64.Build.0 = Release|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Debug|x64.Build.0 = Debug|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Release|x64.ActiveCfg = Release|Any CPU
+		{77777777-7777-4777-8777-777777777777}.Release|x64.Build.0 = Release|Any CPU
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Debug|Any CPU.Build.0 = Debug|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Debug|x64.ActiveCfg = Debug|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Debug|x64.Build.0 = Debug|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Release|Any CPU.ActiveCfg = Release|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Release|Any CPU.Build.0 = Release|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Release|x64.ActiveCfg = Release|x64
+		{9442DC7A-98D6-499D-8B08-20E6B5ADF7A1}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

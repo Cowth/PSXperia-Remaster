@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\PSXperia.Engine\PSXperia.Engine.csproj" />
+    <ProjectReference Include="..\..\src\PSXperia.Library\PSXperia.Library.csproj" />
     <Content Include="..\..\tools\PSXperiaTool.jar" Link="tools\PSXperiaTool.jar" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\..\tools\LICENSE-PSXperiaTool.txt" Link="tools\LICENSE-PSXperiaTool.txt" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

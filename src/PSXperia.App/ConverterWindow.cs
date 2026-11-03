@@ -54,10 +54,12 @@ public sealed class ConverterWindow : UserControl
         var scroll = new ScrollViewer { VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
         var body = new StackPanel(); scroll.Content = body; root.Children.Add(scroll);
         body.Children.Add(Section("1 · Select game", "Choose an imported CUE sheet, BIN, IMG, or ISO from your library."));
-        _game.ItemsSource = _games; _game.DisplayMemberPath = nameof(GameEntry.Title); _game.SelectionChanged += (_, _) => UpdateSuggestedTitleId();
+        _game.ItemsSource = _games;
+        _game.DisplayMemberPath = nameof(GameEntry.Title);
+        _game.SelectionChanged += GameSelection_SelectionChanged;
         if (_games.Count > 0) _game.SelectedIndex = 0;
+        UpdateSuggestedTitleId(_game.SelectedItem as GameEntry);
         body.Children.Add(Field("Game library", _game));
-        _titleId.Text = _games.Count > 0 ? SuggestedTitleId(_games[0]) : "";
         body.Children.Add(Field("Output title ID", _titleId, "Unique package identifier, e.g. SLUS00128_1"));
 
         body.Children.Add(Section("2 · Runtime Manager", "Choose the Crash Bandicoot APK and matching standalone ZPAK from your own Xperia runtime files. Files remain on this PC."));
@@ -174,17 +176,19 @@ public sealed class ConverterWindow : UserControl
         finally { _validateButton.IsEnabled = true; }
     }
 
-    private void UpdateSuggestedTitleId()
+    private void GameSelection_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (_game.SelectedItem is GameEntry selected && string.IsNullOrWhiteSpace(_titleId.Text)) _titleId.Text = SuggestedTitleId(selected);
+        if (!ReferenceEquals(sender, _game)) return;
+
+        // Always read the ComboBox's current selection. Keeping this update limited
+        // to selection changes leaves manual edits alone during unrelated UI events.
+        UpdateSuggestedTitleId(_game.SelectedItem as GameEntry);
         _convertButton.IsEnabled = _runtimeValid && _game.SelectedItem is not null;
     }
-    private static string SuggestedTitleId(GameEntry game)
+
+    private void UpdateSuggestedTitleId(GameEntry? selectedGame)
     {
-        var serial = game.DiscSerial ?? game.TitleId;
-        if (string.IsNullOrWhiteSpace(serial)) return "";
-        var clean = new string(serial.Where(char.IsLetterOrDigit).ToArray()).ToUpperInvariant();
-        return clean.Length > 0 ? clean + "_1" : "";
+        _titleId.Text = selectedGame is null ? "" : TitleIdSuggestion.ForGame(selectedGame);
     }
 
     private async Task ConvertAsync()

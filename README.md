@@ -2,14 +2,17 @@
 
 A Windows desktop project for preparing PlayStation 1 disc images for the Sony Ericsson Xperia Play using the user's own compatible Sony runtime files.
 
-> **Development status:** Milestone 06.7 — Xperia USB Connect (early test build). The desktop application has launched and compiled successfully in the maintainer's Visual Studio environment. Physical Xperia Play USB detection, APK installation, game-data transfer, and in-game launch still require device testing. Do not treat the USB workflow as production-verified yet.
+> **Development status:** V2 CLEAN development build, continuing Milestone 07.1. The repository includes the existing WPF application, original Java conversion tool, Game Library and artwork workflows, engine regression tests, and the read-only Runtime Archive Measurement utility. Physical Xperia Play USB detection, APK installation, game-data transfer, and in-game launch still require device testing; the USB workflow is not production-verified.
 
 ## Project goals
 
 - Modern Windows interface for the original PSXperia conversion workflow.
 - Disc-image inspection and conversion for games the user legally owns.
 - Local use of compatible Sony runtime APK/ZPAK files supplied by the user.
-- Converted-game library, artwork, compatibility notes, and device workflow.
+- Game Library with manual 170 × 170 cover import, automatic artwork lookup, and converted-game artwork management.
+- Suggested output Title IDs based on the selected game's detected serial, while keeping the field editable.
+- Synthetic regression coverage for the conversion engine and read-only runtime archive measurement.
+- Compatibility notes and Xperia device workflow.
 - Careful validation before claiming device installation or performance improvements.
 
 ## Current requirements
@@ -30,6 +33,10 @@ A Windows desktop project for preparing PlayStation 1 disc images for the Sony E
 5. Configure Java 21 (`JAVA_HOME`) and Android Platform-Tools (`adb`) as required by the relevant workflows.
 6. Launch the WPF application.
 
+For the verified development environment, exact Release x64 build and test
+commands, local signing prerequisites, and frozen Java engine/security notes,
+see [docs/DEVELOPMENT-HANDOFF.md](docs/DEVELOPMENT-HANDOFF.md).
+
 The public repository intentionally does **not** include Sony runtime APK/ZPAK files, PS1 game images, converted game packages, or other copyrighted user-supplied content. Supply compatible runtime files locally through the application.
 
 ## Important legal and preservation notes
@@ -41,7 +48,7 @@ The public repository intentionally does **not** include Sony runtime APK/ZPAK f
 
 ## Third-party components
 
-The `tools/PSXperiaTool.jar` component is accompanied by its Apache License 2.0 text in `tools/LICENSE-PSXperiaTool.txt`. Preserve that license and its required notices when redistributing the component. The license of the PSXperia Remastered application code itself has **not yet been selected**; no project-wide open-source license is granted by this repository draft.
+The `tools/PSXperiaTool.jar` component is accompanied by an Apache License 2.0 text, but the recovered PSXperia sources contain GPL-3.0-or-later headers and the current JAR has not been proven reproducible from pinned inputs. Treat redistribution of the JAR as blocked pending legal review; do not assume the included license text resolves the conflicting provenance. See [docs/DEVELOPMENT-HANDOFF.md](docs/DEVELOPMENT-HANDOFF.md). The license of the PSXperia Remastered application code itself has **not yet been selected**; no project-wide open-source license is granted by this repository draft.
 
 ## Repository structure
 
@@ -52,7 +59,9 @@ The `tools/PSXperiaTool.jar` component is accompanied by its Apache License 2.0 
 
 ## Testing status
 
-See `docs/MILESTONE-06.7-XPERIA-USB-CONNECT.md`. The first physical-device test should be performed with USB debugging enabled and the user-authorized ADB host. Confirm device detection first; validate APK install, data placement, package verification, and game launch as separate steps.
+The solution includes the `PSXperia.Engine.Tests` xUnit suite, WPF Title ID selection tests, and the `PSXperia.RuntimeArchiveMeasure.Tests` synthetic regression harness. The measurement utility does not extract runtime archive entries and its reports are not compatibility verdicts. See [docs/DEVELOPMENT-HANDOFF.md](docs/DEVELOPMENT-HANDOFF.md) for Release x64 build and test commands.
+
+The Java conversion engine remains frozen at the documented JAR hash. Java ZIP extraction and APKTool resource extraction security remain outstanding, and the bundled tool's provenance/licensing requires legal review. See the handoff document for details. Physical Xperia Play testing is still required for USB detection, APK installation, game-data transfer, and in-game launch; see `docs/MILESTONE-06.7-XPERIA-USB-CONNECT.md`.
 
 ## Contributing
 
