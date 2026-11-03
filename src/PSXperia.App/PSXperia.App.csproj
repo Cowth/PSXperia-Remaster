@@ -11,6 +11,6 @@
   <Content Include="..\..\tools\PSXperiaTool.jar" Link="tools\PSXperiaTool.jar" CopyToOutputDirectory="PreserveNewest" />
   <Content Include="..\..\tools\LICENSE-PSXperiaTool.txt" Link="tools\LICENSE-PSXperiaTool.txt" CopyToOutputDirectory="PreserveNewest" />
   <Resource Include="Assets\playstation-wave.png" />
-  <Content Include="Assets\background-music.mp3" Condition="Exists('Assets\background-music.mp3')" CopyToOutputDirectory="PreserveNewest" />
+  <Content Include="Assets\Audio\UnderwaterAmbient.mp3" CopyToOutputDirectory="PreserveNewest" />
 </ItemGroup>
 </Project>

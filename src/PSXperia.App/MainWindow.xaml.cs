@@ -513,7 +513,7 @@ public partial class MainWindow : Window
             if (!_settings.BackgroundMusic) { _backgroundPlayer.Stop(); return; }
             if (!_musicOpened)
             {
-                var path = Path.Combine(AppContext.BaseDirectory, "Assets", "background-music.mp3");
+                var path = Path.Combine(AppContext.BaseDirectory, "Assets", "Audio", "UnderwaterAmbient.mp3");
                 if (!File.Exists(path)) return;
                 _backgroundPlayer.Open(new Uri(path, UriKind.Absolute));
                 _backgroundPlayer.MediaEnded += (_, _) => { _backgroundPlayer.Position = TimeSpan.Zero; _backgroundPlayer.Play(); };
